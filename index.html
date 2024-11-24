@@ -7,37 +7,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-900">
-    <!-- Photo Grid -->
     <main class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div class="w-full aspect-square overflow-hidden">
-                <img class="h-full w-full object-cover cursor-pointer" src="photos/2D1152AB-6D7B-4657-A17E-79766BCC6570_1_102_o.jpeg" alt="Image 1">
+            <div class="w-full">
+                <div class="w-full aspect-square overflow-hidden rounded-md">
+                    <img class="h-full w-full object-cover cursor-pointer" src="photos/2D1152AB-6D7B-4657-A17E-79766BCC6570_1_102_o.jpeg" alt="Image 1">
+                </div>
+                <p class="mt-2 text-gray-700">Berlin - Schöneweide</p>
             </div>
-            <div class="w-full aspect-square overflow-hidden">
-                <img class="h-full w-full object-cover cursor-pointer" src="photos/5D5383CD-F1FA-4832-BE33-17C8CC036790_1_102_o.jpeg" alt="Image 2">
+            <div class="w-full">
+                <div class="w-full aspect-square overflow-hidden rounded-md">
+                    <img class="h-full w-full object-cover cursor-pointer" src="photos/5D5383CD-F1FA-4832-BE33-17C8CC036790_1_102_o.jpeg" alt="Image 2">
+                </div>
+                <p class="mt-2 text-gray-700">Berlin - Schöneweide</p>
             </div>
-            <div class="w-full aspect-square overflow-hidden">
-                <img class="h-full w-full object-cover cursor-pointer" src="photos/397D436D-E327-439E-9AAF-EB9C6DF444DD_1_102_o.jpeg" alt="Image 3">
+            <div class="w-full">
+                <div class="w-full aspect-square overflow-hidden rounded-md">
+                    <img class="h-full w-full object-cover cursor-pointer" src="photos/397D436D-E327-439E-9AAF-EB9C6DF444DD_1_102_o.jpeg" alt="Image 3">
+                </div>
+                <p class="mt-2 text-gray-700">Berlin - Schöneweide</p>
             </div>
-            <div class="w-full aspect-square overflow-hidden">
-                <img class="h-full w-full object-cover cursor-pointer" src="photos/A1346D6D-F6F1-4A4B-B3A9-931DAD00D154_1_102_o.jpeg" alt="Image 4">
+            <div class="w-full">
+                <div class="w-full aspect-square overflow-hidden rounded-md">
+                    <img class="h-full w-full object-cover cursor-pointer" src="photos/A1346D6D-F6F1-4A4B-B3A9-931DAD00D154_1_102_o.jpeg" alt="Image 4">
+                </div>
+                <p class="mt-2 text-gray-700">Berlin - Schöneweide</p>
             </div>
-            <div class="w-full aspect-square overflow-hidden">
-                <img class="h-full w-full object-cover cursor-pointer" src="photos/ACEC0F52-AC26-48A8-8C2C-89928A42411B_1_102_o.jpeg" alt="Image 5">
+            <div class="w-full">
+                <div class="w-full aspect-square overflow-hidden rounded-md">
+                    <img class="h-full w-full object-cover cursor-pointer" src="photos/ACEC0F52-AC26-48A8-8C2C-89928A42411B_1_102_o.jpeg" alt="Image 5">
+                </div>
+                <p class="mt-2 text-gray-700">Berlin - Schöneweide</p>
             </div>
-            <div class="w-full aspect-square overflow-hidden">
-                <img class="h-full w-full object-cover cursor-pointer" src="photos/F744AEEA-1C57-4642-977E-20EDD77E27D7.jpeg" alt="Image 6">
+            <div class="w-full">
+                <div class="w-full aspect-square overflow-hidden rounded-md">
+                    <img class="h-full w-full object-cover cursor-pointer" src="photos/F744AEEA-1C57-4642-977E-20EDD77E27D7.jpeg" alt="Image 6">
+                </div>
+                <p class="mt-2 text-gray-700">Berlin - Schöneweide</p>
             </div>
         </div>
     </main>
 
     <!-- Modal -->
     <div id="photo-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50">
-        <div class="relative bg-white rounded-lg p-4 max-w-4xl w-auto max-h-screen shadow-lg">
+        <div class="relative bg-white rounded-lg px-4 pt-4 max-w-4xl w-auto max-h-screen shadow-lg">
             <button id="close-modal" class="absolute top-2 right-2 text-gray-700 hover:text-gray-900 text-2xl font-bold">
                 &times;
             </button>
-            <img id="modal-img" src="" alt="Expanded Photo" class="w-auto max-h-screen max-w-screen object-contain rounded-lg pb-8">
+            <img id="modal-img" src="" alt="Expanded Photo" class="w-auto max-h-screen max-w-screen object-contain pb-8">
         </div>
     </div>
 
