@@ -1,0 +1,8 @@
+body {
+    background-color: #f8f8f8; /* Light off-white color */
+    background-image: 
+        radial-gradient(circle, rgba(0, 0, 0, 0.03) 10%, transparent 10%), 
+        radial-gradient(circle, rgba(0, 0, 0, 0.03) 10%, transparent 10%);
+    background-size: 6px 6px;
+    background-position: 0 0, 3px 3px;
+}
