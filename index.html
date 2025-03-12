@@ -26,16 +26,35 @@
             class="relative bg-white rounded-xl max-w-4xl w-auto max-h-screen shadow-2xl p-6 transform scale-95 transition-transform duration-300 ease-in-out">
             <!-- Close Button -->
             <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-3xl font-bold transition-colors duration-200">
-                &times;
+                class="absolute top-1 right-1 text-gray-500 hover:text-gray-900 text-3xl font-bold transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
             </button>
-
             <!-- Image Container -->
             <div class="flex items-center justify-center">
                 <img id="modal-img" src="" alt="Expanded Photo"
                     class="w-auto max-h-[80vh] max-w-full object-contain rounded-lg shadow-md">
             </div>
         </div>
+        <!-- Next Button -->
+        <button id="next-photo"
+            class="absolute top-1/2 right-4 text-gray-100 hover:text-gray-300 text-3xl font-bold transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+
+        </button>
+        <!-- Previous Button -->
+        <button id="prev-photo"
+            class="absolute top-1/2 left-4 text-gray-100 hover:text-gray-500 text-3xl font-bold transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+        </button>
     </div>
 
     <!-- Script -->
@@ -74,7 +93,7 @@
 
         photos.forEach(photo => {
             const photoCard = document.createElement('div');
-            photoCard.className = 'w-full p-4 border-2 border-gray-200 rounded-md shadow-lg cursor-pointer';
+            photoCard.className = 'w-full p-4 border-2 border-solid border-gray rounded-md shadow-lg cursor-pointer';
             photoCard.innerHTML = `
                 <div class="w-full aspect-square overflow-hidden rounded-md">
                     <img loading="lazy" class="h-full w-full object-cover" src="${photo.src}" alt="${photo.alt}">
@@ -88,13 +107,20 @@
         const modal = document.getElementById('photo-modal');
         const modalImg = document.getElementById('modal-img');
         const closeModal = document.getElementById('close-modal');
+        const nextPhoto = document.getElementById('next-photo');
+        const prevPhoto = document.getElementById('prev-photo');
+        let currentIndex = 0;
+
+        function showPhoto(index) {
+            modalImg.src = photos[index].src;
+            modal.classList.remove('hidden');
+        }
 
         // Open modal on parent div click
-        images.forEach(div => {
+        images.forEach((div, index) => {
             div.addEventListener('click', () => {
-                const img = div.querySelector('img');
-                modalImg.src = img.src;
-                modal.classList.remove('hidden');
+                currentIndex = index;
+                showPhoto(currentIndex);
             });
         });
 
@@ -108,6 +134,18 @@
             if (e.target === modal) {
                 modal.classList.add('hidden');
             }
+        });
+
+        // Show next photo
+        nextPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % photos.length;
+            showPhoto(currentIndex);
+        });
+
+        // Show previous photo
+        prevPhoto.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            showPhoto(currentIndex);
         });
     </script>
 </body>
